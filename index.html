@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna University</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background-color: #f5f5f5;
+    }
+
+    /* Header */
+    header {
+      background-color: #800000; /* Anna University maroon */
+      color: white;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700; /* Gold hover */
+    }
+
+    section {
+      padding: 80px 20px;
+      min-height: 80vh;
+    }
+
+    h1, h2 {
+      color: #800000;
+      text-align: center;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 15px auto;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Courses grid */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .course-card i {
+      font-size: 40px;
+      color: #800000;
+      margin-bottom: 10px;
+    }
+
+    .course-card h3 {
+      margin: 10px 0;
+    }
+
+    .course-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #800000;
+      color: white;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Anna_University_logo.png" alt="Anna University Logo">
+      <h1>Anna University</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home/Welcome Section -->
+  <section id="home">
+    <h1>Welcome to Anna University</h1>
+    <p>Anna University is a premier technical university in India, established in 1978. We are committed to providing world-class education, fostering research, and nurturing innovation. Our campus is home to state-of-the-art laboratories, libraries, and facilities to support academic excellence.</p>
+    <p>Join thousands of students who are shaping their future and making meaningful contributions in engineering, technology, and applied sciences.</p>
+    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="University Campus" width="100%">
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses">
+    <h2>BE & B.Tech Courses Offered</h2>
+    <div class="course-grid">
+      <div class="course-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>BE Computer Science</h3>
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f" alt="Computer Science">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-cogs"></i>
+        <h3>BE Mechanical Engineering</h3>
+        <img src="https://images.unsplash.com/photo-1581091012184-5c08e7bfa1a6" alt="Mechanical Engineering">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-bolt"></i>
+        <h3>BE Electrical Engineering</h3>
+        <img src="https://images.unsplash.com/photo-1581092160615-6371bfa2cc60" alt="Electrical Engineering">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-network-wired"></i>
+        <h3>BE Electronics & Communication</h3>
+        <img src="https://images.unsplash.com/photo-1581091012184-5c08e7bfa1a6" alt="Electronics & Communication">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>B.Tech Information Technology</h3>
+        <img src="https://images.unsplash.com/photo-1581091019532-7c54a3b44d8b" alt="Information Technology">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Anna University is renowned for academic excellence and research innovation. Our faculty consists of highly qualified professors and industry experts who mentor students for real-world challenges.</p>
+    <p>The university offers a vibrant campus life with modern facilities including advanced laboratories, sports complexes, cultural events, and entrepreneurship support, ensuring holistic development of students.</p>
+    <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5" alt="Library" width="100%">
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-envelope"></i> Email: info@annauniv.edu</p>
+    <p><i class="fas fa-phone"></i> Phone: +91-44-2235-7000</p>
+    <p><i class="fas fa-map-marker-alt"></i> Address: Sardar Patel Road, Guindy, Chennai, Tamil Nadu, India</p>
+    <img src="https://images.unsplash.com/photo-1581091012184-5c08e7bfa1a6" alt="Contact Office" width="100%">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Anna University. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
