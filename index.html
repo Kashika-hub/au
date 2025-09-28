@@ -7,8 +7,86 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    .dropdown-contact {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.dropdown-contact {
+  position: relative;
+  display: flex;
+  justify-content: center; /* centers the button */
+  margin: 30px auto;       /* adds spacing above and below */
+}
+
+.dropbtn {
+  background-color: #800000;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.dropbtn:hover {
+  background-color: #a00000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 350px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.dropdown-contact:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown-content input,
+.dropdown-content select,
+.dropdown-content textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.dropdown-content button {
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: #a00000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -19,32 +97,29 @@
 
     /* Header */
     header {
-      background-color: #800000; /* Anna University maroon */
+      background-color: #800000;
       color: white;
-      padding: 10px 30px;
-      display: flex;
+      padding: 20px 30px;
+      display: grid;
+      grid-template-columns: auto 1fr auto; /* Logo | Title | Nav */
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      min-height: 120px;
     }
 
-    header .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    .logo-container img {
+      height: 100px;  /* Bigger logo */
     }
 
-    header img {
-      height: 60px;
-    }
-
-    header h1 {
-      font-size: 24px;
-      margin: 0;
+    .uni-title {
+      text-align: center;
+      font-size: 50px;
       font-weight: 700;
+      margin: 0;
     }
 
     nav ul {
@@ -53,22 +128,24 @@
       padding: 0;
       display: flex;
       gap: 25px;
+      flex-wrap: wrap;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
+      font-size: 25px;   /* Increased font size */
       transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: #ffd700; /* Gold hover */
+      color: #ffd700;
     }
 
     section {
       padding: 80px 20px;
-      min-height: 80vh;
+      min-height: 70vh;
     }
 
     h1, h2 {
@@ -77,10 +154,10 @@
     }
 
     p {
-      max-width: 800px;
+      max-width: 900px;
       margin: 15px auto;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 25px;
+      line-height: 1.8;
       text-align: center;
       color: #333;
     }
@@ -113,10 +190,6 @@
       margin-bottom: 10px;
     }
 
-    .course-card h3 {
-      margin: 10px 0;
-    }
-
     .course-card img {
       width: 100%;
       border-radius: 12px;
@@ -133,6 +206,37 @@
       padding: 20px;
       font-size: 0.9rem;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr; /* Stack logo, title, and nav */
+        text-align: center;
+      }
+
+      .logo-container img {
+        height: 80px;
+      }
+
+      .uni-title {
+        font-size: 30px;
+        margin: 10px 0;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      nav ul li a {
+        font-size: 20px;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -140,9 +244,9 @@
   <!-- Header -->
   <header>
     <div class="logo-container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Anna_University_logo.png" alt="Anna University Logo">
-      <h1>Anna University</h1>
+      <img src="ioc1/aulogo.jpg" alt="Anna University Logo">
     </div>
+    <h1 class="uni-title">Anna University</h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -156,9 +260,9 @@
   <!-- Home/Welcome Section -->
   <section id="home">
     <h1>Welcome to Anna University</h1>
-    <p>Anna University is a premier technical university in India, established in 1978. We are committed to providing world-class education, fostering research, and nurturing innovation. Our campus is home to state-of-the-art laboratories, libraries, and facilities to support academic excellence.</p>
-    <p>Join thousands of students who are shaping their future and making meaningful contributions in engineering, technology, and applied sciences.</p>
-    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="University Campus" width="100%">
+    <p>Anna University, established in 1978, stands as one of India’s premier technical universities, nurturing leaders in science, technology, and engineering. With a commitment to academic excellence and world-class research, the university provides students with a strong foundation for careers in industry, academia, and beyond.</p>
+    <p>Our campus is home to cutting-edge laboratories, extensive libraries, modern classrooms, and vibrant cultural and sports facilities. Students here gain not only knowledge but also skills, values, and exposure to become global professionals.</p>
+    <img src="ioc1/ceg_campus.jpg" alt="University Campus" width="100%">
   </section>
 
   <!-- Courses Section -->
@@ -168,27 +272,42 @@
       <div class="course-card">
         <i class="fas fa-laptop-code"></i>
         <h3>BE Computer Science</h3>
-        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f" alt="Computer Science">
+        <img src="ioc1/cse.jpg" alt="Computer Science">
       </div>
       <div class="course-card">
         <i class="fas fa-cogs"></i>
         <h3>BE Mechanical Engineering</h3>
-        <img src="https://images.unsplash.com/photo-1581091012184-5c08e7bfa1a6" alt="Mechanical Engineering">
+        <img src="ioc1/me.jpg" alt="Mechanical Engineering">
       </div>
       <div class="course-card">
         <i class="fas fa-bolt"></i>
         <h3>BE Electrical Engineering</h3>
-        <img src="https://images.unsplash.com/photo-1581092160615-6371bfa2cc60" alt="Electrical Engineering">
+        <img src="ioc1/ee.jpg" alt="Electrical Engineering">
       </div>
       <div class="course-card">
         <i class="fas fa-network-wired"></i>
         <h3>BE Electronics & Communication</h3>
-        <img src="https://images.unsplash.com/photo-1581091012184-5c08e7bfa1a6" alt="Electronics & Communication">
+        <img src="ioc1/ece.jpg" alt="Electronics & Communication">
       </div>
       <div class="course-card">
         <i class="fas fa-project-diagram"></i>
         <h3>B.Tech Information Technology</h3>
-        <img src="https://images.unsplash.com/photo-1581091019532-7c54a3b44d8b" alt="Information Technology">
+        <img src="ioc1/it.jpg" alt="Information Technology">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-globe"></i>
+        <h3>BE Geoinformatics</h3>
+        <img src="ioc1/gi.jpg" alt="Geoinformatics">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-building"></i>
+        <h3>B.E.Civil Engineering</h3>
+        <img src="ioc1/ce.jpg" alt="Civil Engineering">
+      </div>
+      <div class="course-card">
+        <i class="fas fa-building"></i>
+        <h3>B.E.Industrial Engineering</h3>
+        <img src="ioc1/ie.jpg" alt="Industrial Engineering">
       </div>
     </div>
   </section>
@@ -196,19 +315,49 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Anna University is renowned for academic excellence and research innovation. Our faculty consists of highly qualified professors and industry experts who mentor students for real-world challenges.</p>
-    <p>The university offers a vibrant campus life with modern facilities including advanced laboratories, sports complexes, cultural events, and entrepreneurship support, ensuring holistic development of students.</p>
-    <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5" alt="Library" width="100%">
+    <p>Anna University was established on 4th September 1978 as a unitary type of University. Named after the late Dr. C.N. Annadurai, former Chief Minister of Tamil Nadu, the university was formed by bringing together four renowned technical institutions in Chennai: College of Engineering, Guindy (CEG), Alagappa College of Technology (ACT), Madras Institute of Technology (MIT), and School of Architecture and Planning (SAP).</p>
+    <p>Over the decades, Anna University has grown into a premier center for higher education, offering a wide range of undergraduate, postgraduate, and doctoral programs in engineering, technology, architecture, and applied sciences. It is recognized globally for its contributions in research and innovation.</p>
+    <p>The University has played a key role in fostering industry collaborations, advancing knowledge in cutting-edge areas like artificial intelligence, space technology, biotechnology, and geoinformatics. Today, Anna University continues to inspire thousands of students, equipping them to meet global challenges with confidence and skill.</p>
+    <div class="image-grid">
+    <img src="ioc1/aboutus.jpeg" alt="Campus Image 1">
+    <img src="ioc1/aboutus2.webp" alt="Campus Image 2">
+    <img src="ioc1/aboutus3.webp" alt="Campus Image 3">
+  </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p><i class="fas fa-envelope"></i> Email: info@annauniv.edu</p>
-    <p><i class="fas fa-phone"></i> Phone: +91-44-2235-7000</p>
-    <p><i class="fas fa-map-marker-alt"></i> Address: Sardar Patel Road, Guindy, Chennai, Tamil Nadu, India</p>
-    <img src="https://images.unsplash.com/photo-1581091012184-5c08e7bfa1a6" alt="Contact Office" width="100%">
-  </section>
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <p><i class="fas fa-envelope"></i> Email: info@annauniv.edu</p>
+  <p><i class="fas fa-phone"></i> Phone: +91-44-2235-7000</p>
+  <p><i class="fas fa-map-marker-alt"></i> Address: Sardar Patel Road, Guindy, Chennai, Tamil Nadu, India</p>
+
+  <!-- Centered Dropdown Feedback Form -->
+  <div class="dropdown-contact">
+    <button class="dropbtn"><i class="fas fa-comment-dots"></i> Send Feedback / Complaint</button>
+    <div class="dropdown-content">
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+          <option value="feedback">Feedback</option>
+          <option value="complaint">Complaint</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
